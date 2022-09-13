@@ -22,7 +22,7 @@ def get_weather():
   res = requests.get(url).json()
   weather = res['days'][0]['conditions']
   temp = math.floor(res['days'][0]['temp'])
-  city = res['address']
+  city = "Evanston, IL, United States"
   body_temp =  math.floor(res['days'][0]['feelslike'])
   return weather, temp, city, body_temp
 
