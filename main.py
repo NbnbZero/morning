@@ -21,10 +21,10 @@ def get_weather():
   url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/evanston?unitGroup=metric&key=48S3T493X5B7RFVAAE6V7JAHJ&contentType=json"
   res = requests.get(url).json()
   weather = res['days'][0]['conditions']
-  high_temp = math.round(res['days'][0]['tempmax'])
+  high_temp = round(res['days'][0]['tempmax'])
   city = res['resolvedAddress']
   date = res['days'][0]['daytime']
-  low_temp =  math.round(res['days'][0]['tempmin'])
+  low_temp =  round(res['days'][0]['tempmin'])
   return weather, high_temp, city, low_temp, date
 
 def get_count():
