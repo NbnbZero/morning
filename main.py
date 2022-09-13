@@ -21,8 +21,8 @@ template_id = os.environ["TEMPLATE_ID"]
 def get_weather():
   url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/evanston?unitGroup=metric&key=48S3T493X5B7RFVAAE6V7JAHJ&contentType=json"
   res = requests.get(url).json()
-  weather = res['days']['preciptype'][0]
-  temp = res['days']['temp']
+  weather = res['days'][0]['preciptype'][0]
+  temp = res['days'][0]['temp']
   return weather, temp
 
 def get_count():
