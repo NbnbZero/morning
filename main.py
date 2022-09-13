@@ -21,8 +21,8 @@ template_id = os.environ["TEMPLATE_ID"]
 def get_weather():
   url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/evanston?unitGroup=metric&key=48S3T493X5B7RFVAAE6V7JAHJ&contentType=json"
   res = requests.get(url).json()
-  weather = res['days'][0]['preciptype'][0]
-  temp = res['days'][0]['temp']
+  weather = res['days'][0]['conditions']
+  temp = math.floor(res['days'][0]['temp'])
   return weather, temp
 
 def get_count():
@@ -49,6 +49,6 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, temperature = get_weather()
-data = {"weather":{"value":wea},"temperature":{"value":temperature},"days_from_birth":{"value":get_count()},"birthday_left":{"value":get_birthday()}}
+data = {"city":{city},"weather":{"value":wea},"temperature":{"value":temperature},"days_from_birth":{"value":get_count()},"birthday_left":{"value":get_birthday()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
