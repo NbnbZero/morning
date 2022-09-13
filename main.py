@@ -8,7 +8,6 @@ import random
 
 today = datetime.now()
 start_date = os.environ['START_DATE']
-city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
 
 app_id = os.environ["APP_ID"]
@@ -23,7 +22,9 @@ def get_weather():
   res = requests.get(url).json()
   weather = res['days'][0]['conditions']
   temp = math.floor(res['days'][0]['temp'])
-  return weather, temp
+  city = res["resolvedAddress"]
+  body_temp =  math.floor(res['days'][0]['feelslike'])
+  return weather, temp, city, body_temp
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
@@ -48,7 +49,7 @@ def get_random_color():
 client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
-wea, temperature = get_weather()
-data = {"city":{city},"weather":{"value":wea},"temperature":{"value":temperature},"days_from_birth":{"value":get_count()},"birthday_left":{"value":get_birthday()}}
+wea, temperature, city, body_temp = get_weather()
+data = {"city":{city},"weather":{"value":wea},"temperature":{"value":temperature},"body_temperature":{"value":body_temp},"days_from_birth":{"value":get_count()},"birthday_left":{"value":get_birthday()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
