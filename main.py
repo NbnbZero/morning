@@ -21,10 +21,11 @@ def get_weather():
   url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/evanston?unitGroup=metric&key=48S3T493X5B7RFVAAE6V7JAHJ&contentType=json"
   res = requests.get(url).json()
   weather = res['days'][0]['conditions']
-  temp = math.floor(res['days'][0]['temp'])
+  high_temp = math.round(res['days'][0]['tempmax'])
   city = res['resolvedAddress']
-  body_temp =  math.floor(res['days'][0]['feelslike'])
-  return weather, temp, city, body_temp
+  date = res['days'][0]['daytime']
+  low_temp =  math.round(res['days'][0]['tempmin'])
+  return weather, high_temp, city, low_temp, date
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
@@ -49,7 +50,7 @@ def get_random_color():
 client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
-wea, temperature, city, body_temp = get_weather()
-data = {"city":{"value":city},"weather":{"value":wea},"temperature":{"value":temperature},"body_temperature":{"value":body_temp},"days_from_birth":{"value":get_count()},"birthday_left":{"value":get_birthday()}}
+wea, high_temp, city, body_temp, low_temp, date = get_weather()
+data = {"city":{"value":city},"weather":{"value":wea},"high_temp":{"value":high_temp},"low_temp":{"value":low_temp},"date":{"value":date},"days_from_birth":{"value":get_count()},"birthday_left":{"value":get_birthday()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
