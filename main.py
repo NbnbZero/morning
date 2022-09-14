@@ -22,7 +22,7 @@ def get_weather():
   weather = res['days'][0]['conditions']
   high_temp = round(res['days'][0]['tempmax'])
   city = res['resolvedAddress']
-  datee = res['days'][0]['datetime']
+  cur_date = res['days'][0]['datetime']
   low_temp =  round(res['days'][0]['tempmin'])
   return weather, high_temp, city, low_temp, cur_date
 
