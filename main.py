@@ -6,7 +6,6 @@ import requests
 import os
 import random
 
-today = datetime.now()
 start_date = os.environ['START_DATE']
 birthday = os.environ['BIRTHDAY']
 
@@ -25,14 +24,15 @@ def get_weather():
   city = res['resolvedAddress']
   datee = res['days'][0]['datetime']
   low_temp =  round(res['days'][0]['tempmin'])
-  return weather, high_temp, city, low_temp, datee
+  return weather, high_temp, city, low_temp, cur_date
 
-def get_count():
-  delta = today - datetime.strptime(start_date, "%Y-%m-%d")
+def get_count(cur_date):
+  delta = datetime.strptime(cur_date, "%Y-%m-%d") - datetime.strptime(start_date, "%Y-%m-%d")
   return delta.days
 
-def get_birthday():
-  next = datetime.strptime(str(date.today().year) + "-" + birthday, "%Y-%m-%d")
+def get_birthday(cur_date):
+  today = datetime.strptime(cur_date, "%Y-%m-%d")
+  next = datetime.strptime(str(today.year) + "-" + birthday, "%Y-%m-%d")
   if next < datetime.now():
     next = next.replace(year=next.year + 1)
   return (next - today).days
@@ -50,7 +50,7 @@ def get_random_color():
 client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
-wea, high_temp, city, low_temp, datee = get_weather()
-data = {"city":{"value":city},"weather":{"value":wea},"high_temp":{"value":high_temp},"low_temp":{"value":low_temp},"date":{"value":datee},"days_from_birth":{"value":get_count()},"birthday_left":{"value":get_birthday()}, "words":{"value":get_words(), "color":get_random_color()}}
+wea, high_temp, city, low_temp, cur_date = get_weather()
+data = {"city":{"value":city},"weather":{"value":wea},"high_temp":{"value":high_temp},"low_temp":{"value":low_temp},"date":{"value":cur_date},"days_from_birth":{"value":get_count(cur_date)},"birthday_left":{"value":get_birthday(cur_date)}, "words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
