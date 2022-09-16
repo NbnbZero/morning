@@ -2,7 +2,7 @@ name: morning
 on:
   workflow_dispatch:
   schedule:
-  - cron:  '14 13 * * *'
+  - cron:  '15 12 * * *'
 
 jobs:
   send_message:
