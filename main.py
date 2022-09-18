@@ -38,9 +38,9 @@ def get_birthday(cur_date):
   return (next - today).days
 
 def get_words():
-  words = ["So let the memories go on and let the days go on. So let me remember 如今天这样的夜。", "我会随着那耀眼的星辰，找到再次回来的路。It's Never Goodbye.", "那时你与我在星光上描绘的梦，多美好 大家一起哭笑的记忆。", "耀眼的那时，那天的我们。曾炙热的日子，在夜空中点亮的梦。", "You are the most important person in your life. So be yourself. Be beautiful.",
-            "无论漆黑夜空中闪亮的星辰，亦或落日余晖时的太阳，都是独一无二的存在。", "I'm doing me regardless and I don't care what you say about it.", "Cause you're my word. 究竟有什么此能像你一样耀眼呢?", "My favorite song 皆有你的身影。", "5v5~wei~", "This time you can face the rain; Next time you can beat the pain.", "无缘无故地闷闷不乐时，暂且忘记现实来玩吧!",
-            "Everyday we get better to be good aenergy! Everyday getting harder be the one synergy!"]
+  words = ["So let the memories go on and let the days go on. So let me remember 오늘 같은 밤이면。", "我会随着那耀眼的星辰，找到再次回来的路。It's Never Goodbye.", "那时你与我在星光上描绘的梦，多美好 大家一起哭笑的记忆。", "耀眼的那时，那天的我们。曾炙热的日子，在夜空中点亮的梦。", "You are the most important person in your life. So be yourself. Be beautiful.",
+            "无论漆黑夜空中闪亮的星辰，亦或落日余晖时的太阳，都是独一无二的存在。", "I'm doing me regardless and I don't care what you say about it.", "Cause you're my word. 그 어떤 말이 너만큼 많이 빛날까?", "My favorite song 모두 네가 있어。", "This time you can face the rain; Next time you can beat the pain.", "无缘无故地闷闷不乐时，暂且忘记现实来玩吧!",
+            "Everyday we get better to be good aenergy! Everyday getting harder be the one synergy!", "Two baddies, two baddies, one Porsche!", "Laugh it up, laugh it up, 네 고민들은 구석에다 던져 놔"]
   return random.choice(words)
 
 def get_random_color():
