@@ -12,8 +12,9 @@ birthday = os.environ['BIRTHDAY']
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
+user_id = os.environ["USER_ID"]
 #zxr_id = os.environ["ZXR_ID"]
-lc_id = os.environ["LC_ID"]
+#lc_id = os.environ["LC_ID"]
 template_id = os.environ["TEMPLATE_ID"]
 
 
@@ -55,5 +56,7 @@ wea, high_temp, city, low_temp, cur_date = get_weather()
 data = {"city":{"value":city},"weather":{"value":wea},"high_temp":{"value":high_temp},"low_temp":{"value":low_temp},"date":{"value":cur_date},"days_from_birth":{"value":get_count(cur_date)},"birthday_left":{"value":get_birthday(cur_date)}, "words":{"value":get_words(), "color":get_random_color()}}
 #res = wm.send_template(zxr_id, template_id, data)
 #print(res)
-res2 = wm.send_template(lc_id, template_id, data)
-print(res2)
+#res2 = wm.send_template(lc_id, template_id, data)
+#print(res2)
+res0 = wm.send_template(user_id, template_id, data)
+print(res0)
