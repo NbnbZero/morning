@@ -52,7 +52,8 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, high_temp, city, low_temp, cur_date = get_weather()
-data = {"city":{"value":city},"weather":{"value":wea},"high_temp":{"value":high_temp},"low_temp":{"value":low_temp},"date":{"value":cur_date},"days_from_birth":{"value":get_count(cur_date)},"birthday_left":{"value":get_birthday(cur_date)}, "words":{"value":get_words(), "color":get_random_color()}}
+bless = "今天一定也要健健康康喔!! >ε<"
+data = {"city":{"value":city},"weather":{"value":wea},"high_temp":{"value":high_temp},"low_temp":{"value":low_temp},"date":{"value":cur_date},"days_from_birth":{"value":get_count(cur_date)},"birthday_left":{"value":get_birthday(cur_date)}, "words":{"value":get_words(), "color":get_random_color()}, "bless":{"value":bless, "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
 res2 = wm.send_template(lc_id, template_id, data)
