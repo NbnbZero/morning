@@ -30,3 +30,4 @@ jobs:
       LC_ID: ${{ secrets.LC_ID }}
       START_DATE: ${{ secrets.START_DATE }}
       BIRTHDAY: ${{ secrets.BIRTHDAY }}
+      USER_ID: ${{ secrets.USER_ID }}
