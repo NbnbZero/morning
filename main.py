@@ -44,7 +44,7 @@ def get_words():
            "那时你与我在星光上描绘的梦, 多美好 大家一起哭笑的记忆。", "耀眼的那时, 那天的我们；曾炙热的日子, 在夜空中点亮的梦。", "无论漆黑夜空中闪亮的星辰, 亦或落日余晖时的太阳, 都是独一无二的存在。", "I'm doing me regardless and I don't care what you say about it.",
            "Cause you're my word. 그 어떤 말이 너만큼 많이 빛날까?", "My favorite song 모두 네가 있어。", "无缘无故地闷闷不乐时, 暂且忘记现实来玩吧! 我这就去接你。", "Two baddies, two baddies, one Porsche!", "Laugh it up, laugh it up, 네 고민들은 구석에다 던져 놔",
            "晚安 我的月光 快来投入我的怀抱；躺在夜幕低垂的涟漪上 或许你并不知晓 你的光芒多么绚丽美好。", "Gold dust up, my sea 금색 가룰 뿌려 찬란히", "따라와 (Bow down) 지켜봐 (My skill) 놀랄걸 (Say wow) We coming~", "花粉飞扬 烟花再灿烂一些 别让我们陷入傲慢与偏见 享受此刻的自由。", "Feel my rhythm Come with me~ 상상해 봐 뭐든지~", "5v5~~Wei~~~"]
-  return words[3]#random.choice(words)
+  return words[2]#random.choice(words)
 
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
