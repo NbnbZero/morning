@@ -50,8 +50,8 @@ def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
 
 def get_bless():
-  bless = ["醒一醒！醒一醒！古德猫宁 >ε<", "今天也给我好好吃饭！", "今天也会有惊喜嘛！", "所以今天也要开开心心！ヽ(✿ﾟ▽ﾟ)ノ", "zxr昨天做梦了吗！", "叮！又是幸运的一天！", "今天一定也要健健康康喔!! >ε<"]
-  return bless[3]#random.choice(bless)
+  bless = ["醒一醒！醒一醒！古德猫宁 >ε<", "今天也给我好好吃饭！", "今天也会有惊喜嘛！", "所以今天也要开开心心！", "zxr昨天做梦了吗！", "叮！又是幸运的一天！", "今天一定也要健健康康喔!! >ε<"]
+  return bless[0]#random.choice(bless)
 
 client = WeChatClient(app_id, app_secret)
 
