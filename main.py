@@ -49,14 +49,16 @@ def get_words():
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
 
+def get_bless():
+  bless = ["醒一醒！醒一醒！古德猫宁 >ε<", "今天也给我好好吃饭！", "今天也会有惊喜嘛！", "所以今天也要开开心心！ヽ(✿ﾟ▽ﾟ)ノ", "zxr昨天做梦了吗！", "叮！又是幸运的一天！", "今天一定也要健健康康喔!! >ε<"]
+  return random.choice(bless)
 
 client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, high_temp, city, low_temp, cur_date = get_weather()
-bless = "今天一定也要健健康康喔!! >ε<"
 color = get_random_color()
-data = {"city":{"value":city, "color":color},"weather":{"value":wea, "color":color},"high_temp":{"value":high_temp, "color":color},"low_temp":{"value":low_temp, "color":color},"date":{"value":cur_date, "color":color},"days_from_birth":{"value":get_count(cur_date), "color":color},"birthday_left":{"value":get_birthday(cur_date), "color":color}, "words":{"value":get_words(), "color":get_random_color()}, "bless":{"value":bless, "color":get_random_color()}}
+data = {"city":{"value":city, "color":color},"weather":{"value":wea, "color":color},"high_temp":{"value":high_temp, "color":color},"low_temp":{"value":low_temp, "color":color},"date":{"value":cur_date, "color":color},"days_from_birth":{"value":get_count(cur_date), "color":color},"birthday_left":{"value":get_birthday(cur_date), "color":color}, "words":{"value":get_words(), "color":get_random_color()}, "bless":{"value":get_bless(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
 res2 = wm.send_template(lc_id, template_id, data)
