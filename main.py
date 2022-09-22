@@ -54,8 +54,8 @@ wea, high_temp, city, low_temp, cur_date = get_weather()
 color = get_random_color()
 week_list = ["周一","周二","周三","周四","周五","周六","周日"]
 weekday = week_list[datetime.strptime(cur_date, "%Y-%m-%d").weekday()]
-bless_list = ["叮！这周也要加油吖！", "今天也要健健康康喔！>ε<", "今天也给我好好吃饭！", "今天也会有惊喜嘛！", "好耶！终于到周五！", "zxr昨天做梦了吗！", "醒醒！醒醒！古德猫宁！"]
-bless = bless_list[datetime.strptime(cur_date, "%Y-%m-%d").weekday()]
+bless_list = ["叮！这周也要加油吖！", "今天也要健健康康喔！>ε<", "今天也给我好好吃饭！", "今天也会有惊喜嘛！", "好耶！终于到周五！(✿ﾟ▽ﾟ)ノ", "zxr昨天做梦了吗！", "醒醒！醒醒！古德猫宁！~~"]
+bless = bless_list[4]#[datetime.strptime(cur_date, "%Y-%m-%d").weekday()]
 data = {"weekday":{"value":weekday, "color":color},"city":{"value":city, "color":color},"weather":{"value":wea, "color":color},"high_temp":{"value":high_temp, "color":color},"low_temp":{"value":low_temp, "color":color},"date":{"value":cur_date, "color":color},"days_from_birth":{"value":get_count(cur_date), "color":color},"birthday_left":{"value":get_birthday(cur_date), "color":color}, "words":{"value":get_words(), "color":get_random_color()}, "bless":{"value":bless, "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
