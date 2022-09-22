@@ -44,21 +44,21 @@ def get_words():
            "那时你与我在星光上描绘的梦, 多美好 大家一起哭笑的记忆。", "耀眼的那时, 那天的我们；曾炙热的日子, 在夜空中点亮的梦。", "无论漆黑夜空中闪亮的星辰, 亦或落日余晖时的太阳, 都是独一无二的存在。", "I'm doing me regardless and I don't care what you say about it.",
            "Cause you're my word. 그 어떤 말이 너만큼 많이 빛날까?", "My favorite song 모두 네가 있어。", "无缘无故地闷闷不乐时, 暂且忘记现实来玩吧! 我这就去接你。", "Two baddies, two baddies, one Porsche!", "Laugh it up, laugh it up, 네 고민들은 구석에다 던져 놔",
            "晚安 我的月光 快来投入我的怀抱；躺在夜幕低垂的涟漪上 或许你并不知晓 你的光芒多么绚丽美好。", "Gold dust up, my sea 금색 가룰 뿌려 찬란히", "따라와 (Bow down) 지켜봐 (My skill) 놀랄걸 (Say wow) We coming~", "花粉飞扬 烟花再灿烂一些 别让我们陷入傲慢与偏见 享受此刻的自由。", "Feel my rhythm Come with me~ 상상해 봐 뭐든지~", "5v5~~Wei~~~"]
-  return random.choice(words)
+  return words[3]#random.choice(words)
 
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
 
 def get_bless():
   bless = ["醒醒！醒醒！古德猫宁！", "今天也给我好好吃饭！", "今天也会有惊喜嘛！", "所以今天也要开开心心！", "zxr昨天做梦了吗！", "叮！又是幸运的一天！", "今天也要健健康康喔！"]
-  return random.choice(bless)
+  return bless[3]#random.choice(bless)
 
 client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, high_temp, city, low_temp, cur_date = get_weather()
 color = get_random_color()
-week_list = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+week_list = ["周一","周二","周三","周四","周五","周六","周日"]
 weekday = week_list[datetime.strptime(cur_date, "%Y-%m-%d").weekday()]
 data = {"weekday":{"value":weekday, "color":color},"city":{"value":city, "color":color},"weather":{"value":wea, "color":color},"high_temp":{"value":high_temp, "color":color},"low_temp":{"value":low_temp, "color":color},"date":{"value":cur_date, "color":color},"days_from_birth":{"value":get_count(cur_date), "color":color},"birthday_left":{"value":get_birthday(cur_date), "color":color}, "words":{"value":get_words(), "color":get_random_color()}, "bless":{"value":get_bless(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
