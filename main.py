@@ -63,7 +63,7 @@ weekday = week_list[datetime.strptime(cur_date, "%Y-%m-%d").weekday()]
 bless_list = ["叮！这周也要加油吖！", "今天也要健健康康喔！>ε<", "今天也给我好好吃饭！", "今天也会有惊喜嘛！", "好耶！终于到周五！(✿ﾟ▽ﾟ)ノ", "zxr昨天做梦了吗！", "醒醒！醒醒！古德猫宁！~~"]
 bless = ""
 days_to_next_birth = get_birthday(cur_date)
-if days_to_next_birth!=0:
+if days_to_next_birth==0:
   bless = "亲爱的如如生日快乐！>ε<"
 else:
   bless = bless_list[4]#bless_list[datetime.strptime(cur_date, "%Y-%m-%d").weekday()]
