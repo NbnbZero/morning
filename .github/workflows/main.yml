@@ -30,4 +30,4 @@ jobs:
       START_DATE: ${{ secrets.START_DATE }}
       BIRTHDAY: ${{ secrets.BIRTHDAY }}
       USER_ID:  ${{ secrets.USER_ID }}
-      GRADUATION: ${{ secrets.GRADUATION_DATE }}
+      GRADUATION_DATE: ${{ secrets.GRADUATION_DATE }}
