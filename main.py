@@ -48,7 +48,8 @@ def get_words():
            "Trouble, trouble like a miscode, 비상이 걸려 버-버퍼링이야, I’m on that Glitch Mode", "Scratch that bring it back! 네 앞에선", "以最高的声音呼唤你的名字, 也许你就会听到吧；花朵在最为悲痛的春天盛开的话, 我会觉得那就像你的声音。", "So let me remember 오늘 같은 밤이면", "我会随着那耀眼的星辰, 找到再次回来的路 It's Never Goodbye.", "那时你与我在星光上描绘的梦, 多美好 大家一起哭笑的记忆。",
            "耀眼的那时, 那天的我们；曾炙热的日子, 在夜空中点亮的梦。", "无论漆黑夜空中闪亮的星辰, 亦或落日余晖时的太阳, 都是独一无二的存在。", "I'm doing me regardless and I don't care what you say about it.", "Cause you're my word. 그 어떤 말이 너만큼 많이 빛날까?", "My favorite song 모두 네가 있어。", "无缘无故地闷闷不乐时, 暂且忘记现实来玩吧! 我这就去接你。", "Two baddies, two baddies, one Porsche!",
            "Laugh it up, laugh it up, 네 고민들은 구석에다 던져 놔", "晚安 我的月光 快来投入我的怀抱；躺在夜幕低垂的涟漪上 或许你并不知晓 你的光芒多么绚丽美好。", "Gold dust up my sea 금색 가룰 뿌려 찬란히", "따라와 (Bow down) 지켜봐 (My skill) 놀랄걸 (Say wow) We coming~", "花粉飞扬 烟花再灿烂一些 别让我们陷入傲慢与偏见 享受此刻的自由。", "Feel my rhythm Come with me~ 상상해 봐 뭐든지~", "5v5~~Wei~~~",
-           "무한하게 반짝여 넌 Like magic 그 환함에 전부 다 잊어 Bad things", "You and I~ It's more than like! L 다음 또 O 다음난 yeah-yeah, yeah~", "다함께 손을 잡아요 그리고 하늘을 봐요~ 우리가 함께 만들 세상을 하늘에 그려봐요", "눈이 부시죠 너무나아름답죠~ 마주잡은 두 손으로 우리 모두 함께 만들어 가요", "I'm addicted 끊임없이 말을 걸어주는 나의 aespa! 이런 교감 너의 존잰 날 다른 차원으로 이끌었지"]
+           "무한하게 반짝여 넌 Like magic 그 환함에 전부 다 잊어 Bad things", "You and I~ It's more than like! L 다음 또 O 다음난 yeah-yeah, yeah~", "다함께 손을 잡아요 그리고 하늘을 봐요~ 우리가 함께 만들 세상을 하늘에 그려봐요", "눈이 부시죠 너무나아름답죠~ 마주잡은 두 손으로 우리 모두 함께 만들어 가요", "I'm addicted 끊임없이 말을 걸어주는 나의 aespa! 이런 교감 너의 존잰 날 다른 차원으로 이끌었지",
+           "더 이상 못 찾겠어 널 유혹해 삼킨 건 Black Mamba!", "Yeppi, you gonna love! Yeppi, you gonna love~ Oh yeppi, yeppi, happy virus 누가 뭐래도 I'm so beautiful"]
   return words[-1]#random.choice(words)
 
 def get_random_color():
