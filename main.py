@@ -67,7 +67,7 @@ words_db = ["This time you can face the rain; Next time you can beat the pain.",
            "Laugh it up, laugh it up, 네 고민들은 구석에다 던져 놔", "晚安 我的月光 快来投入我的怀抱；躺在夜幕低垂的涟漪上 或许你并不知晓 你的光芒多么绚丽美好。", "Gold dust up my sea 금색 가룰 뿌려 찬란히", "따라와 (Bow down) 지켜봐 (My skill) 놀랄걸 (Say wow) We coming~", "花粉飞扬 烟花再灿烂一些 别让我们陷入傲慢与偏见 享受此刻的自由。", "Feel my rhythm Come with me~ 상상해 봐 뭐든지~", "5v5~~Wei~~~",
            "무한하게 반짝여 넌 Like magic 그 환함에 전부 다 잊어 Bad things", "You and I~ It's more than like! L 다음 또 O 다음난 yeah-yeah, yeah~", "다함께 손을 잡아요 그리고 하늘을 봐요~ 우리가 함께 만들 세상을 하늘에 그려봐요", "눈이 부시죠 너무나아름답죠~ 마주잡은 두 손으로 우리 모두 함께 만들어 가요", "I'm addicted 끊임없이 말을 걸어주는 나의 aespa! 이런 교감 너의 존잰 날 다른 차원으로 이끌었지",
            "더 이상 못 찾겠어 널 유혹해 삼킨 건 Black Mamba!", "Yeppi, you gonna love! Yeppi, you gonna love~ Oh yeppi, yeppi, happy virus 누가 뭐래도 I'm so beautiful"]
-chosen_id_list = random.sample(words_db, 7)
+chosen_id_list = random.sample(random.sample(words_db, len(words_db)), 7)
 words = chosen_id_list[tmp]
 
 data = {"weekday":{"value":weekday, "color":color},"city":{"value":city, "color":color},"weather":{"value":wea, "color":color},"high_temp":{"value":high_temp, "color":color},"low_temp":{"value":low_temp, "color":color},"date":{"value":cur_date, "color":color},"days_to_graduation":{"value":get_graduation(cur_date), "color":color},"days_from_birth":{"value":get_count(cur_date), "color":color},"birthday_left":{"value":days_to_next_birth, "color":color}, "words":{"value":words, "color":get_random_color()}, "bless":{"value":bless, "color":get_random_color()}}
