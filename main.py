@@ -21,7 +21,7 @@ test = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 def get_weather():
   url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/evanston?unitGroup=metric&key=48S3T493X5B7RFVAAE6V7JAHJ&contentType=json"
   res = requests.get(url).json()
-  weather = "Rain, Partially cloudy throughout the day"#res['days'][0]['conditions']
+  weather = res['days'][0]['conditions']
   high_temp = str(round(res['days'][0]['tempmax']))+"°C"
   city = res['resolvedAddress']
   cur_date = res['days'][0]['datetime']
@@ -54,7 +54,7 @@ def get_words():
            "무한하게 반짝여 넌 Like magic 그 환함에 전부 다 잊어 Bad things", "You and I~ It's more than like! L 다음 또 O 다음난 yeah-yeah, yeah~", "다함께 손을 잡아요 그리고 하늘을 봐요~ 우리가 함께 만들 세상을 하늘에 그려봐요", "눈이 부시죠 너무나아름답죠~ 마주잡은 두 손으로 우리 모두 함께 만들어 가요", "I'm addicted 끊임없이 말을 걸어주는 나의 aespa! 이런 교감 너의 존잰 날 다른 차원으로 이끌었지",
            "더 이상 못 찾겠어 널 유혹해 삼킨 건 Black Mamba!", "Yeppi, you gonna love! Yeppi, you gonna love~ Oh yeppi, yeppi, happy virus 누가 뭐래도 I'm so beautiful", "금세 잔뜩 닿아반짝이잖니 금색 길을 내어 나를 빛내지", "널 만나기 전엔 그저 어두웠지 칠흑 같은 바다 밑을 본 적 있니? 일렁이는 얼굴 표정 없는 매일 괜히 흘러갈 뿐 기대 없던 내일", "突然有一天 银河自我头顶倾泻而下 一边与我问好 眼眸凝视着我 这才察觉到手中的光芒",
            "'She no longer needs me' 널 원할 수록 내 현실은 무거워지고 있어", "그럼에도 나는 더 참지 못해 지금 너에게 달려 가고 싶어 나의 모든 순간이 너를 원하고 있으니", "I'm not going back, back, back, back, back! 다짐했던 난데 우는 널 보면 미쳐 너는 내게 왜, 왜, 왜, 왜, 왜, 왜", "너 이럴 때 마다 또 무너져 난 이제는 다시는 더 이상 더 이상 날 찾지마, no~ no!"]
-  return words_db[-2]#random.choice(random.sample(words_db, len(words_db)))
+  return random.choice(random.sample(words_db, len(words_db)))
 
 client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
@@ -69,7 +69,7 @@ days_to_next_birth = get_birthday(cur_date)
 if days_to_next_birth==0:
   bless = "亲爱的如如生日快乐！>ε<"
 else:
-  bless = bless_list[4]#bless_list[tmp]
+  bless = bless_list[tmp]
 
 data = {"weekday":{"value":weekday, "color":color},"city":{"value":city, "color":color},"weather":{"value":wea, "color":color},"high_temp":{"value":high_temp, "color":color},"low_temp":{"value":low_temp, "color":color},"date":{"value":cur_date, "color":color},"days_to_graduation":{"value":get_graduation(cur_date), "color":color},"days_from_birth":{"value":get_count(cur_date), "color":color},"birthday_left":{"value":days_to_next_birth, "color":color}, "words":{"value":get_words(), "color":get_random_color()}, "bless":{"value":bless, "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
