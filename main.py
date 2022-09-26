@@ -21,7 +21,7 @@ test = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 def get_weather():
   url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/evanston?unitGroup=metric&key=48S3T493X5B7RFVAAE6V7JAHJ&contentType=json"
   res = requests.get(url).json()
-  weather = res['days'][0]['conditions']
+  weather = "Rain, Partially cloudy"#res['days'][0]['conditions']
   high_temp = str(round(res['days'][0]['tempmax']))+"°C"
   city = res['resolvedAddress']
   cur_date = res['days'][0]['datetime']
