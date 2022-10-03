@@ -53,7 +53,8 @@ def get_words():
            "Laugh it up, laugh it up, 네 고민들은 구석에다 던져 놔", "晚安 我的月光 快来投入我的怀抱；躺在夜幕低垂的涟漪上 或许你并不知晓 你的光芒多么绚丽美好。", "Gold dust up my sea 금색 가룰 뿌려 찬란히", "따라와 (Bow down) 지켜봐 (My skill) 놀랄걸 (Say wow) We coming~", "花粉飞扬 烟花再灿烂一些 别让我们陷入傲慢与偏见 享受此刻的自由。", "Feel my rhythm Come with me~ 상상해 봐 뭐든지~", "5v5~~Wei~~~",
            "무한하게 반짝여 넌 Like magic 그 환함에 전부 다 잊어 Bad things", "You and I~ It's more than like! L 다음 또 O 다음난 yeah-yeah, yeah~", "다함께 손을 잡아요 그리고 하늘을 봐요~ 우리가 함께 만들 세상을 하늘에 그려봐요", "눈이 부시죠 너무나아름답죠~ 마주잡은 두 손으로 우리 모두 함께 만들어 가요", "I'm addicted 끊임없이 말을 걸어주는 나의 aespa! 이런 교감 너의 존잰 날 다른 차원으로 이끌었지",
            "더 이상 못 찾겠어 널 유혹해 삼킨 건 Black Mamba!", "Yeppi, you gonna love! Yeppi, you gonna love~ Oh yeppi, yeppi, happy virus 누가 뭐래도 I'm so beautiful", "금세 잔뜩 닿아반짝이잖니 금색 길을 내어 나를 빛내지", "널 만나기 전엔 그저 어두웠지 칠흑 같은 바다 밑을 본 적 있니? 일렁이는 얼굴 표정 없는 매일 괜히 흘러갈 뿐 기대 없던 내일", "突然有一天 银河自我头顶倾泻而下 一边与我问好 眼眸凝视着我 这才察觉到手中的光芒",
-           "'She no longer needs me' 널 원할 수록 내 현실은 무거워지고 있어", "그럼에도 나는 더 참지 못해 지금 너에게 달려 가고 싶어 나의 모든 순간이 너를 원하고 있으니", "I'm not going back, back, back, back, back! 다짐했던 난데 우는 널 보면 미쳐 너는 내게 왜, 왜, 왜, 왜, 왜, 왜", "너 이럴 때 마다 또 무너져 난 이제는 다시는 더 이상 더 이상 날 찾지마, no~ no!"]
+           "'She no longer needs me' 널 원할 수록 내 현실은 무거워지고 있어", "그럼에도 나는 더 참지 못해 지금 너에게 달려 가고 싶어 나의 모든 순간이 너를 원하고 있으니", "I'm not going back, back, back, back, back! 다짐했던 난데 우는 널 보면 미쳐 너는 내게 왜, 왜, 왜, 왜, 왜, 왜", "너 이럴 때 마다 또 무너져 난 이제는 다시는 더 이상 더 이상 날 찾지마, no~ no!", "오감이 일렁여 나만이 느낀 exclusive 넌 나의 감성, I love it, my designer",
+           "가장 특별한 너를 입을래 매일 I do every night everyday Yeah ayy ayy", "You got what I need, You got what I like 사계절을 함께해도 바래지 않아 내게 변함없는 단 한 사람 그게 너야", "Ayy, 안 놓칠게, I'm all in 자랑해 하루 종일 다른 건 필요 없어 Nothin' anything. I want you, got it, girl?"]
   return random.choice(random.sample(words_db, len(words_db)))
 
 client = WeChatClient(app_id, app_secret)
