@@ -55,7 +55,7 @@ def get_words():
            "더 이상 못 찾겠어 널 유혹해 삼킨 건 Black Mamba!", "Yeppi, you gonna love! Yeppi, you gonna love~ Oh yeppi, yeppi, happy virus 누가 뭐래도 I'm so beautiful", "금세 잔뜩 닿아반짝이잖니 금색 길을 내어 나를 빛내지", "널 만나기 전엔 그저 어두웠지 칠흑 같은 바다 밑을 본 적 있니? 일렁이는 얼굴 표정 없는 매일 괜히 흘러갈 뿐 기대 없던 내일", "突然有一天 银河自我头顶倾泻而下 一边与我问好 眼眸凝视着我 这才察觉到手中的光芒",
            "'She no longer needs me' 널 원할 수록 내 현실은 무거워지고 있어", "그럼에도 나는 더 참지 못해 지금 너에게 달려 가고 싶어 나의 모든 순간이 너를 원하고 있으니", "I'm not going back, back, back, back, back! 다짐했던 난데 우는 널 보면 미쳐 너는 내게 왜, 왜, 왜, 왜, 왜, 왜", "너 이럴 때 마다 또 무너져 난 이제는 다시는 더 이상 더 이상 날 찾지마, no~ no!", "오감이 일렁여 나만이 느낀 exclusive 넌 나의 감성, I love it, my designer",
            "가장 특별한 너를 입을래 매일 I do every night everyday Yeah ayy ayy", "You got what I need, You got what I like 사계절을 함께해도 바래지 않아 내게 변함없는 단 한 사람 그게 너야", "Oh baby it's you 이제 시작이야 무한의 나", "거짓은 들러붙어 끈적해~ 회색 빛 도시 it ain't got a chance", "You should be afraid of us; we're bout to blow up.", "即便你夺走了我的一切, 即便所有人都在阻挡我梦想的脚步, 我也定会全力以赴; 빛이 나는 my way, 빛이 나는 my way",
-           "Counting stars, 밤하늘에 펄 Better than your Louis Vuitton, your Louis Vuitton"]
+           "Counting stars, 밤하늘에 펄 Better than your Louis Vuitton, your Louis Vuitton", "I believe in miracles, Energy like that; Something more than physical, So gimme that", "네 맘을 훔칠 black suit 날 향해 빛난 너의 루즈 아찔한 느낌 move it up 손짓 하나로 빠져들게 해", "Callin' when it's after dark, Something in the way you wanna talk; Touch me, tease me, feel me up; Touch me, tease me, feel me up."]
   return random.choice(random.sample(words_db, len(words_db)))
 
 client = WeChatClient(app_id, app_secret)
