@@ -47,15 +47,7 @@ def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
 
 def get_words():
-  recent_db = ["단지 널 사랑해 이렇게 말했지～ 이제껏 준비했던 많은 말을 뒤로한 채", "언제나 니 옆에 있을게~ 이렇게 약속을 하겠어 저 하늘을 바라다보며~",
-               "머리 위로 비친 내 하늘 바라다보며~ 널 향한 마음을 이제는 굳혔지만~", "웬일인지 네게 더 다가갈수록~ 우린 같은 하늘 아래 서 있었지~~",
-               "就如同漫长的黑夜笼罩着白雪入眠，我会将你的担忧温暖地融化，So I'll be there baby, 在你所有的季节。",
-               "Merry-go Merry-go Merry-go-around~ 예쁜 이마 위 입 맞출게요", "五彩缤纷的烟花，专属两个人的精彩旅行，我是你的游乐园。",
-               "Yeah I'm gonna, I'm gonna love you~ 숨쉬는 것처럼 I'm gonna love", "이대로 가면 날 사랑했던 널 잊을 수가 있긴 할까?",
-               "항상 같은 곳을 봤던 넌 어디에?", "为何我从不知道，这个季节之所以温暖是因为有你在我身边~", "볼 수 있기를 내 안에 어느새 번진 그대란 선물",
-               "You're my everything, 그대의 낮과 밤을 지켜 주고 싶어 나 내게 기적이란 너야", "My Graduation 그 첫걸음 많이 행복하게 될 거야~",
-               "손 흔들어 안녕 마지막 인사하고 돌아서면 날 기다린 세상으로 가~", "You're my night and day 기다리고 있어 이 거리 널 다시 그리며"]
-  
+  recent_db = []
   words_db = ["This time you can face the rain; Next time you can beat the pain.", "입에 붙어, like a snack, 다시, repeat, 되는 trap 이 리듬, make it pop like soda", "Watch me~ Ooh, 24/7 아직 부족해~ 들리니? 함께 있는 매일, put it on replay", "뱉는 순간 heartbeat, bum, bum, bum! Cool kid 다운 kick on the drum, drum, drum!", "令人愉悦的声音 笑意盈盈；一同唱起的歌声 一起去往那时 愉快的曾经。",
              "Trouble, trouble like a miscode, 비상이 걸려 버-버퍼링이야, I’m on that Glitch Mode", "Scratch that bring it back! 네 앞에선", "以最高的声音呼唤你的名字, 也许你就会听到吧；花朵在最为悲痛的春天盛开的话, 我会觉得那就像你的声音。", "So let me remember 오늘 같은 밤이면", "我会随着那耀眼的星辰, 找到再次回来的路 It's Never Goodbye.", "那时你与我在星光上描绘的梦, 多美好 大家一起哭笑的记忆。",
              "耀眼的那时, 那天的我们；曾炙热的日子, 在夜空中点亮的梦。", "无论漆黑夜空中闪亮的星辰, 亦或落日余晖时的太阳, 都是独一无二的存在。", "I'm doing me regardless and I don't care what you say about it.", "Cause you're my word. 그 어떤 말이 너만큼 많이 빛날까?", "My favorite song 모두 네가 있어。", "无缘无故地闷闷不乐时, 暂且忘记现实来玩吧! 我这就去接你。", "Two baddies, two baddies, one Porsche!",
@@ -73,7 +65,7 @@ def get_words():
              "항상 같은 곳을 봤던 넌 어디에?", "为何我从不知道，这个季节之所以温暖是因为有你在我身边~", "볼 수 있기를 내 안에 어느새 번진 그대란 선물",
              "You're my everything, 그대의 낮과 밤을 지켜 주고 싶어 나 내게 기적이란 너야", "My Graduation 그 첫걸음 많이 행복하게 될 거야~",
              "손 흔들어 안녕 마지막 인사하고 돌아서면 날 기다린 세상으로 가~", "You're my night and day 기다리고 있어 이 거리 널 다시 그리며"]
-  return random.choice(recent_db)
+  return random.choice(words_db)
 
 client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
