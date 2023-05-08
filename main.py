@@ -39,7 +39,7 @@ def get_graduation(cur_date):
 def get_birthday(cur_date):
   today = datetime.strptime(cur_date, "%Y-%m-%d")
   next = datetime.strptime(str(today.year) + "-" + birthday, "%Y-%m-%d")
-  if next < datetime.now():
+  if next < today:
     next = next.replace(year=next.year + 1)
   return (next - today).days
 
