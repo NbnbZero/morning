@@ -16,6 +16,7 @@ user_id = os.environ["USER_ID"]
 lc_id = os.environ["LC_ID"]
 template_id = os.environ["TEMPLATE_ID"]
 graduation = os.environ["GRADUATION_DATE"]
+print(birthday, graduation)
 
 def get_weather():
   url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/evanston?unitGroup=metric&key=48S3T493X5B7RFVAAE6V7JAHJ&contentType=json"
@@ -82,7 +83,7 @@ def get_words():
 client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 wea, high_temp, city, low_temp, cur_date = get_weather()
-cur_date = "2024-03-25"
+cur_date = graduation
 color = get_random_color()
 week_list = ["周一","周二","周三","周四","周五","周六","周日"]
 tmp = datetime.strptime(cur_date, "%Y-%m-%d").weekday()
