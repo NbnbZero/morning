@@ -82,24 +82,23 @@ if days_to_next_birth==0:
 else:
   bless = bless_list[tmp]
 
-# data = {"weekday":{"value":weekday, "color":color},
-#         "city":{"value":city, "color":color},
-#         "weather":{"value":wea, "color":color},
-#         "high_temp":{"value":high_temp, "color":color},
-#         "low_temp":{"value":low_temp, "color":color},
-#         "date":{"value":cur_date, "color":color},
-#         "days_to_graduation":{"value":get_graduation(cur_date), "color":color},
-#         "days_from_birth":{"value":get_count(cur_date), "color":color},
-#         "birthday_left":{"value":days_to_next_birth, "color":color},
-#         "words":{"value":get_words(), "color":get_random_color()},
-#         "bless":{"value":bless, "color":get_random_color()}}
 data = {
-  "song":{"value":city},
-  "sth_to_say":{"value":wea}
+  "weekday":{"value":weekday, "color":color},
+  "city":{"value":city, "color":color},
+  "weather":{"value":wea, "color":color},
+  "high_temp":{"value":high_temp, "color":color},
+  "low_temp":{"value":low_temp, "color":color},
+  "date":{"value":cur_date, "color":color},
+  "days_to_graduation":{"value":get_graduation(cur_date), "color":color},
+  "days_from_birth":{"value":get_count(cur_date), "color":color},
+  "birthday_left":{"value":days_to_next_birth, "color":color},
+#   "words":{"value":get_words(), "color":get_random_color()},
+#   "bless":{"value":bless, "color":get_random_color()}
 }
-print(data["song"])
-print(data["sth_to_say"])
-print(color)
+# data = {
+#   "song":{"value":city},
+#   "sth_to_say":{"value":wea}
+# }
 res = wm.send_template(user_id, template_id, data)
 print(res)
 res2 = wm.send_template(lc_id, template_id, data)
