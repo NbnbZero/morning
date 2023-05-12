@@ -44,7 +44,8 @@ def get_birthday(cur_date):
   return (next - today).days
 
 def get_random_color():
-  return "#%06x" % random.randint(0, 0xFFFFFF)
+  # return "#%06x" % random.randint(0, 0xFFFFFF)
+  return list(np.random.choice(range(256), size=3))
 
 def get_words():
   recent_db = []
@@ -74,7 +75,7 @@ color = get_random_color()
 week_list = ["周一","周二","周三","周四","周五","周六","周日"]
 tmp = datetime.strptime(cur_date, "%Y-%m-%d").weekday()
 weekday = week_list[tmp]
-bless_list = ["叮！这周也要加油吖！", "今天也要健健康康喔！>ε<", "今天也给我好好吃饭！", "今天也会有惊喜嘛！", "好耶！终于到周五！(✿ﾟ▽ﾟ)ノ", "zxr昨天做梦了吗！", "醒醒！醒醒！古德猫宁！~~"]
+bless_list = ["叮！这周也要加油吖！", "今天也要健健康康喔！>ε<", "今天也给我好好吃饭！", "今天也会有惊喜嘛！", "好耶！终于到周五！", "zxr昨天做梦了吗！", "醒醒！醒醒！古德猫宁！~~"]
 bless = ""
 days_to_next_birth = get_birthday(cur_date)
 if days_to_next_birth==0:
@@ -92,7 +93,7 @@ data = {
   "days_to_graduation":{"value":get_graduation(cur_date), "color":color},
   "days_from_birth":{"value":get_count(cur_date), "color":color},
   "birthday_left":{"value":days_to_next_birth, "color":color},
-  "words":{"value":">ε<", "color":get_random_color()},
+  "words":{"value":get_words(), "color":get_random_color()},
   "bless":{"value":bless, "color":get_random_color()}
 }
 # data = {
