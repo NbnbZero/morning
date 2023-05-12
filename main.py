@@ -92,7 +92,7 @@ data = {
   "days_to_graduation":{"value":get_graduation(cur_date), "color":color},
   "days_from_birth":{"value":get_count(cur_date), "color":color},
   "birthday_left":{"value":days_to_next_birth, "color":color},
-#   "words":{"value":get_words(), "color":get_random_color()},
+  "words":{"value":get_words(), "color":color},
 #   "bless":{"value":bless, "color":get_random_color()}
 }
 # data = {
