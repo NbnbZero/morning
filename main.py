@@ -94,8 +94,8 @@ else:
 #         "words":{"value":get_words(), "color":get_random_color()},
 #         "bless":{"value":bless, "color":get_random_color()}}
 data = {
-  "song":{"value":city, "color":get_random_color()},
-  "sth_to_say":{"value":wea, "color":get_random_color()}
+  "song":{"value":city},
+  "sth_to_say":{"value":wea}
 }
 print(data["song"])
 print(data["sth_to_say"])
