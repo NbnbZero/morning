@@ -95,7 +95,7 @@ else:
 #         "bless":{"value":bless, "color":get_random_color()}}
 data = {
   "words":{"value":get_words(), "color":get_random_color()},
-  "bless":{"value":bless, "color":get_random_color()}}
+  "bless":{"value":bless, "color":get_random_color()}
 }
 print(data["words"])
 print(data["bless"])
