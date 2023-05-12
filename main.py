@@ -84,7 +84,7 @@ else:
 
 data = {
   "weekday":{"value":weekday, "color":color},
-  "city":{"value":get_words(), "color":color},
+  "city":{"value":city, "color":color},
   "weather":{"value":wea, "color":color},
   "high_temp":{"value":high_temp, "color":color},
   "low_temp":{"value":low_temp, "color":color},
