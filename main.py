@@ -45,7 +45,7 @@ def get_birthday(cur_date):
 
 def get_random_color():
   # return "#%06x" % random.randint(0, 0xFFFFFF)
-  return list(np.random.choice(range(256), size=3))
+  return random.choices(range(256), k=3)
 
 def get_words():
   recent_db = []
