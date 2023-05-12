@@ -97,8 +97,8 @@ data = {
   "song":{"value":"단지 널 사랑해 이렇게 말했지～", "color":get_random_color()},
   "sth_to_say":{"value":"好耶！终于到周五！(✿ﾟ▽ﾟ)ノ", "color":get_random_color()}
 }
-print(data["words"])
-print(data["bless"])
+print(data["song"])
+print(data["sth_to_say"])
 print(color)
 res = wm.send_template(user_id, template_id, data)
 print(res)
