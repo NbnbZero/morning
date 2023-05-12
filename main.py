@@ -16,7 +16,6 @@ user_id = os.environ["USER_ID"]
 lc_id = os.environ["LC_ID"]
 template_id = os.environ["TEMPLATE_ID"]
 graduation = os.environ["GRADUATION_DATE"]
-test = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
 def get_weather():
   url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/evanston?unitGroup=metric&key=48S3T493X5B7RFVAAE6V7JAHJ&contentType=json"
@@ -83,6 +82,7 @@ def get_words():
 client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 wea, high_temp, city, low_temp, cur_date = get_weather()
+cur_date = "2024-03-25"
 color = get_random_color()
 week_list = ["周一","周二","周三","周四","周五","周六","周日"]
 tmp = datetime.strptime(cur_date, "%Y-%m-%d").weekday()
@@ -95,6 +95,12 @@ if days_to_next_birth==0:
 else:
   bless = bless_list[tmp]
 
+words = get_words()
+
+if get_graduation(cur_date)==0:
+  words = "My Graduation 그 첫걸음 많이 행복하게 될 거야"
+  bless = "亲爱的如如毕业快乐！"
+
 data = {
   "weekday":{"value":weekday, "color":color},
   "city":{"value":city, "color":color},
@@ -105,7 +111,7 @@ data = {
   "days_to_graduation":{"value":get_graduation(cur_date), "color":color},
   "days_from_birth":{"value":get_count(cur_date), "color":color},
   "birthday_left":{"value":days_to_next_birth, "color":color},
-  "words":{"value":get_words(), "color":get_random_color()},
+  "words":{"value":words, "color":get_random_color()},
   "bless":{"value":bless, "color":get_random_color()}
 }
 
