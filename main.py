@@ -94,8 +94,8 @@ else:
 #         "words":{"value":get_words(), "color":get_random_color()},
 #         "bless":{"value":bless, "color":get_random_color()}}
 data = {
-  "song":{"value":"단지 널 사랑해 이렇게 말했지～", "color":get_random_color()},
-  "sth_to_say":{"value":"好耶！终于到周五！(✿ﾟ▽ﾟ)ノ", "color":get_random_color()}
+  "song":{"value":city, "color":get_random_color()},
+  "sth_to_say":{"value":wea, "color":get_random_color()}
 }
 print(data["song"])
 print(data["sth_to_say"])
