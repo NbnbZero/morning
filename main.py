@@ -76,6 +76,9 @@ def get_words():
               "We are the cure",
               "말해줘 Merry Merry Christmas",
               "널 만날 거야 이런 날 이해해",
+              "Ah Don't have wings But I'm flying"
+              "There's no perfect timing"
+              "This could turn into something"
               ]
   return random.choice(words_db)
 
