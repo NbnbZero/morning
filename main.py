@@ -113,5 +113,5 @@ data = {
 
 res = wm.send_template(user_id, template_id, data)
 print(res)
-res2 = wm.send_template(lc_id, template_id, data)
-print(res2)
+#res2 = wm.send_template(lc_id, template_id, data)
+#print(res2)
